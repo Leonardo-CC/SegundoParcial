@@ -25,7 +25,7 @@ const server = http.createServer((req, res) => {
         req.on('end', () => {
             try {
                 const data = JSON.parse(body);
-                console.log('📩 POST recibido:', data);
+                console.log('POST recibido:', data);
                 res.writeHead(201, { 'Content-Type': 'application/json' }); // Código 201: creado
                 res.end(JSON.stringify({ message: 'Formulario recibido (POST)' }));
             } catch {
@@ -41,7 +41,7 @@ const server = http.createServer((req, res) => {
         req.on('end', () => {
             try {
                 const data = JSON.parse(body);
-                console.log('✏️ PUT recibido:', data);
+                console.log('PUT recibido:', data);
                 res.writeHead(200, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify({ message: 'Datos actualizados (PUT)' }));
             } catch {
@@ -57,7 +57,7 @@ const server = http.createServer((req, res) => {
         req.on('end', () => {
             try {
                 const data = JSON.parse(body);
-                console.log('🛠️ PATCH recibido:', data);
+                console.log('PATCH recibido:', data);
                 res.writeHead(200, { 'Content-Type': 'application/json' });
                 res.end(JSON.stringify({ message: 'Datos parcialmente actualizados (PATCH)' }));
             } catch {
@@ -68,7 +68,7 @@ const server = http.createServer((req, res) => {
     }
 
     else if (req.method === 'DELETE' && req.url === '/api/contacto') {
-        console.log('🗑️ DELETE recibido');
+        console.log('DELETE recibido');
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ message: 'Datos eliminados (DELETE)' }));
     }
